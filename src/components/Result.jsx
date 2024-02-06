@@ -33,7 +33,8 @@ function Result({ userInput }) {
                                 <td>{formatter.format(item.interest)}</td>
                                 <td>{formatter.format(totalInterest)}</td>
                                 <td>
-                                    {formatter.format(totalAmountInvested)}
+                                    {formatter.format(totalAmountInvested
+                                      )}
                                 </td>
                             </tr>
                         );

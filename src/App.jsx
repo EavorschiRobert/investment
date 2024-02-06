@@ -8,8 +8,11 @@ function App() {
         initialInvestment: 10000,
         annualInvestment: 1200,
         expectedReturn: 6,
-        duration: 10,
+        duration: 1,
     });
+
+    const inputIsValid = userInput.duration > 0;
+
     const handleChange = (event, field) => {
         setUserInput((prevState) => {
             return {
@@ -22,7 +25,12 @@ function App() {
         <div>
             <Header />
             <UserInput userInput={userInput} handleChange={handleChange}/>
+            {inputIsValid ? 
             <Result userInput={userInput}/>
+            :
+            <p className="center">Please enter a duration greater than zero</p>
+            }
+            
         </div>
     );
 }
